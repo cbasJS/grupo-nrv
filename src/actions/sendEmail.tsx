@@ -40,7 +40,7 @@ export async function sendEmail(formData: FormData) {
 
   try {
     await transporter.sendMail({
-      from: `"Formulario Web" <${process.env.EMAIL_USER}>`,
+      from: `"Formulario Página Web" <${process.env.EMAIL_USER}>`,
       to: process.env.EMAIL_TO,
       subject: `Nuevo mensaje de ${name}`,
       html: `
