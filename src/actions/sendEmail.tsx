@@ -6,13 +6,13 @@ import { google } from "googleapis";
 const OAuth2 = google.auth.OAuth2;
 
 const oauth2Client = new OAuth2(
-  process.env.GOOGLE_CLIENT_ID,
-  process.env.GOOGLE_CLIENT_SECRET,
+  process.env.NEXT_GOOGLE_CLIENT_ID,
+  process.env.NEXT_GOOGLE_CLIENT_SECRET,
   "https://developers.google.com/oauthplayground"
 );
 
 oauth2Client.setCredentials({
-  refresh_token: process.env.GOOGLE_REFRESH_TOKEN,
+  refresh_token: process.env.NEXT_GOOGLE_REFRESH_TOKEN,
 });
 
 export async function sendEmail(formData: FormData) {
@@ -30,18 +30,18 @@ export async function sendEmail(formData: FormData) {
     service: "gmail",
     auth: {
       type: "OAuth2",
-      user: process.env.EMAIL_USER,
-      clientId: process.env.GOOGLE_CLIENT_ID,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-      refreshToken: process.env.GOOGLE_REFRESH_TOKEN,
+      user: process.env.NEXT_EMAIL_USER,
+      clientId: process.env.NEXT_GOOGLE_CLIENT_ID,
+      clientSecret: process.env.NEXT_GOOGLE_CLIENT_SECRET,
+      refreshToken: process.env.NEXT_GOOGLE_REFRESH_TOKEN,
       accessToken: accessToken.token!,
     },
   });
 
   try {
     await transporter.sendMail({
-      from: `"Formulario Web" <${process.env.EMAIL_USER}>`,
-      to: process.env.EMAIL_TO,
+      from: `"Formulario Web" <${process.env.NEXT_EMAIL_USER}>`,
+      to: process.env.NEXT_EMAIL_TO,
       subject: `Nuevo mensaje de ${name}`,
       html: `
         <p><strong>Nombre:</strong> ${name}</p>
