@@ -4,12 +4,14 @@ export type Props = {
   imageUrl: string;
   title?: React.ReactNode;
   content?: React.ReactNode;
+  bgColor?: string;
 };
 
 export default function ExperienceSection2({
   imageUrl,
   title,
   content,
+  bgColor,
 }: Props) {
   return (
     <section className="w-full">
@@ -28,7 +30,12 @@ export default function ExperienceSection2({
         </div>
 
         {/* Bloque verde */}
-        <div className="bg-[linear-gradient(270deg,#005944_100%,rgba(0,191,146,0.63)_100%)] text-white px-4 py-8 text-sm leading-relaxed">
+        <div
+          className={
+            "bg-[linear-gradient(270deg,#005944_100%,rgba(0,191,146,0.63)_100%)] text-white px-4 py-8 text-sm leading-relaxed" +
+            (bgColor ? ` bg-none bg-[${bgColor}]` : "")
+          }
+        >
           {content}
         </div>
       </div>
@@ -55,7 +62,14 @@ export default function ExperienceSection2({
         </div>
 
         {/* Texto lateral */}
-        <div className="bg-[linear-gradient(270deg,#005944_100%,rgba(0,191,146,0.63)_100%)] text-white flex items-center px-14">
+        <div
+          className={
+            "bg-[linear-gradient(270deg,#005944_100%,rgba(0,191,146,0.63)_100%)] text-white flex items-center px-14" +
+            bgColor
+              ? ` bg-none bg-[${bgColor}]`
+              : ""
+          }
+        >
           {content}
         </div>
       </div>

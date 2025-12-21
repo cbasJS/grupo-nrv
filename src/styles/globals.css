@@ -152,14 +152,14 @@ p {
   cursor: pointer;
 
   @media (min-width: 768px) {
-    width: 15px;
-    height: 15px;
+    width: 12px;
+    height: 12px;
   }
 
-  @media (min-width: 1024px)  {
+  /* @media (min-width: 1024px)  {
     width: 20px;
     height: 20px;
-  }
+  } */
 }
 
 .dot:focus {

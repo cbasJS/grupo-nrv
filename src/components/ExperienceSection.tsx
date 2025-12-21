@@ -4,15 +4,17 @@ export type Props = {
   imageUrl: string;
   content: React.ReactNode;
   columnReverse?: boolean;
+  bgColor?: string;
 };
 
 export default function ExperienceSection({
   imageUrl,
   content,
   columnReverse,
+  bgColor,
 }: Props) {
   return (
-    <section className="bg-section-green-nrv">
+    <section className={bgColor ? `bg-[${bgColor}]` : "bg-section-green-nrv"}>
       <div className="mx-auto py-8 px-4 lg:px-0 lg:py-0 lg:grid lg:grid-cols-2 lg:items-center">
         {/* Text content */}
         <div
