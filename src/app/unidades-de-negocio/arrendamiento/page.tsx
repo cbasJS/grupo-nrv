@@ -25,10 +25,13 @@ export default function Arrendamiento() {
               Arrendamiento de maquinaria
             </h1>
             <p className="text-white mt-1.5 md:mt-3 lg:mt-4">
-              Ofrecemos un servicio de arrendamiento de maquinaria
-              <br /> confiable y eficiente, brindando equipos de última
-              <br /> generación para garantizar el máximo rendimiento en
-              <br /> cada obra.
+              Ofrecemos un servicio de arrendamiento{" "}
+              <br className="md:hidden" /> de maquinaria
+              <br className="hidden md:block" /> confiable y eficiente,
+              brindando equipos de última
+              <br className="hidden md:block" /> generación para garantizar el
+              máximo rendimiento en
+              <br className="hidden md:block" /> cada obra.
             </p>
           </>
         }
