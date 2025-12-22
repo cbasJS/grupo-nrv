@@ -10,8 +10,8 @@ export const metadata: Metadata = {
 };
 
 const heroImages = [
-  "/images/hero/arrendamiento/slider1.jpg",
-  "/images/hero/arrendamiento/slider1.jpg",
+  "/images/hero/arrendamiento/slider3.jpg",
+  "/images/hero/arrendamiento/slider2.jpg",
 ];
 
 export default function Arrendamiento() {

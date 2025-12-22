@@ -11,7 +11,10 @@ export const metadata: Metadata = {
     "NRV: 12 años liderando proyectos de construcción, infraestructura y edificación. Ofrecemos soluciones de alto impacto y arrendamiento de maquinaria moderna.",
 };
 
-const heroImages = ["/images/hero/home/slider1.png"];
+const heroImages = [
+  "/images/hero/home/slider1.jpg",
+  "/images/hero/home/slider2.jpg",
+];
 
 export default function Home() {
   return (

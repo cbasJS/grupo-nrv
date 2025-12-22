@@ -106,7 +106,7 @@ const Hero: React.FC<Props> = ({ images, caption }) => {
                 <Image
                   src={src}
                   alt="Slider Image"
-                  fill={true}
+                  fill
                   quality={100}
                   className="object-cover w-full h-full"
                 />
