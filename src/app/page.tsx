@@ -84,6 +84,7 @@ export default function Home() {
             (TIPO A2, TIPO A4)  - SERVICIO DE CONTROL DE CALIDAD EN CARRETERAS
           </p>
         }
+        // bgColor={undefined}
       />
     </>
   );

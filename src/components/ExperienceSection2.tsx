@@ -13,6 +13,7 @@ export default function ExperienceSection2({
   content,
   bgColor,
 }: Props) {
+  console.log(bgColor);
   return (
     <section className="w-full">
       {/* Mobile */}
@@ -31,10 +32,9 @@ export default function ExperienceSection2({
 
         {/* Bloque verde */}
         <div
-          className={
-            "bg-[linear-gradient(270deg,#005944_100%,rgba(0,191,146,0.63)_100%)] text-white px-4 py-8 text-sm leading-relaxed" +
-            (bgColor ? ` bg-none bg-[${bgColor}]` : "")
-          }
+          className={`bg-[linear-gradient(270deg,#005944_100%,rgba(0,191,146,0.63)_100%)] text-white px-4 py-8 text-sm leading-relaxed ${
+            bgColor ? `bg-none bg-[${bgColor}]` : ""
+          }`}
         >
           {content}
         </div>
@@ -63,12 +63,8 @@ export default function ExperienceSection2({
 
         {/* Texto lateral */}
         <div
-          className={
-            "bg-[linear-gradient(270deg,#005944_100%,rgba(0,191,146,0.63)_100%)] text-white flex items-center px-14" +
-            bgColor
-              ? ` bg-none bg-[${bgColor}]`
-              : ""
-          }
+          className={`bg-[linear-gradient(270deg,#005944_100%,rgba(0,191,146,0.63)_100%)] text-white flex items-center px-14
+            ${bgColor ? ` bg-none bg-[${bgColor}]` : ""}`}
         >
           {content}
         </div>
