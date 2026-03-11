@@ -28,7 +28,7 @@ export default function Header() {
           >
             <Image
               src="/images/logo.png"
-              alt="NRV Ingeniería"
+              alt="Grupo NRV"
               width={120}
               height={40}
               className="h-auto w-24"

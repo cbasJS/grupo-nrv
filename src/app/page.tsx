@@ -6,9 +6,9 @@ import { Metadata } from "next";
 import ExperienceSection2 from "@/components/ExperienceSection2";
 
 export const metadata: Metadata = {
-  title: "NRV Ingeniería | Inicio",
+  title: "Grupo NRV | Inicio",
   description:
-    "NRV: 12 años liderando proyectos de construcción, infraestructura y edificación. Ofrecemos soluciones de alto impacto y arrendamiento de maquinaria moderna.",
+    "12 años liderando proyectos de construcción, infraestructura y edificación. Ofrecemos soluciones de alto impacto y arrendamiento de maquinaria moderna.",
 };
 
 const heroImages = [
