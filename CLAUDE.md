@@ -1,0 +1,1 @@
+Este proyecto es una aplicacion web de la empresa Grupo NRV en el cual podemos visualizar las diferentes unidades de negocio y usa server actions de nextjs para un el formulario de contacto

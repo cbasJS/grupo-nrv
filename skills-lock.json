@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "skills": {
+    "frontend-architecture": {
+      "source": "manutej/luxor-claude-marketplace",
+      "sourceType": "github",
+      "computedHash": "b448e66cf8bd318b1f4835a55370cf2c57e61abbc8078ca81954eb5f7e4b08ff"
+    },
+    "frontend-design": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "computedHash": "063a0e6448123cd359ad0044cc46b0e490cc7964d45ef4bb9fd842bd2ffbca67"
+    },
+    "react-performance-optimization": {
+      "source": "nickcrew/claude-ctx-plugin",
+      "sourceType": "github",
+      "computedHash": "841fb99740109cd8b77606c9402fbb81e44a5f8c5fc6b3dc010e9397218e33cb"
+    }
+  }
+}
