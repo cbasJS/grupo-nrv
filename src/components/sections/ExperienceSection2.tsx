@@ -23,7 +23,7 @@ export default function ExperienceSection2({
       {/* Mobile */}
       <div className="block lg:hidden">
         <div className="relative h-[420px] w-full">
-          <Image src={imageUrl} alt="" fill className="object-cover" priority />
+          <Image src={imageUrl} alt="" fill sizes="(max-width: 1024px) 100vw, 60vw" className="object-cover" priority />
           <div className="absolute inset-0 bg-black/40" />
           {title && (
             <h2 className="absolute top-10 left-4 right-4 text-white text-2xl font-bold leading-snug">
@@ -47,6 +47,7 @@ export default function ExperienceSection2({
             src={imageUrl}
             alt=""
             fill
+            sizes="60vw"
             className="object-fill"
             quality={100}
           />

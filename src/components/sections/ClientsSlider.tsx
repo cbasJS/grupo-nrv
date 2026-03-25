@@ -76,6 +76,7 @@ export default function ClientsSlider() {
                   alt={client.name}
                   width={160}
                   height={80}
+                  style={{ width: "auto", height: "auto" }}
                   className="object-contain transition"
                 />
               </div>

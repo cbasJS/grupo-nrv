@@ -92,7 +92,9 @@ const Hero: React.FC<Props> = ({ images, caption }) => {
                 src={src}
                 alt="Slider Image"
                 fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1280px) 100vw, 100vw"
                 quality={100}
+                loading={idx === 0 ? "eager" : "lazy"}
                 className="object-cover w-full h-full"
               />
             </div>

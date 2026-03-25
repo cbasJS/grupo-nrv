@@ -66,6 +66,8 @@ export default function FeaturedProjects() {
                   src={project.image}
                   alt={project.title}
                   fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  loading="eager"
                   className="object-cover"
                 />
               </div>

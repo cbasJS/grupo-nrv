@@ -36,6 +36,7 @@ export default function ExperienceSection({
             src={imageUrl}
             alt="Sección de experiencia"
             fill
+            sizes="50vw"
             className="object-cover"
             priority
           />
