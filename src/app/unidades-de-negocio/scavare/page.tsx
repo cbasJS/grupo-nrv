@@ -4,7 +4,7 @@ import Hero from "@/components/sections/Hero";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Arrendamiento | Grupo NRV",
+  title: "Scavare | Grupo NRV",
   description:
     "12 años liderando proyectos de construcción, infraestructura y edificación. Ofrecemos soluciones de alto impacto y arrendamiento de maquinaria moderna.",
 };

@@ -6,7 +6,7 @@ import { Metadata } from "next";
 import ExperienceSection2 from "@/components/sections/ExperienceSection2";
 
 export const metadata: Metadata = {
-  title: "Grupo NRV | Inicio",
+  title: "Nrv Ingeniería | Grupo NRV",
   description:
     "12 años liderando proyectos de construcción, infraestructura y edificación. Ofrecemos soluciones de alto impacto y arrendamiento de maquinaria moderna.",
 };
@@ -81,7 +81,7 @@ export default function Home() {
             PROYECTOS GEOMÉTRICOS - CONSTRUCCIÓN DE TERRACERÍAS Y PLATAFORMAS -
             CONSTRUCCIÓN DE OBRAS DE DRENAJE, LOSAS Y ALCANTARILLAS -
             CONSTRUCCIÓN DE PAVIMENTOS EN CARRETERAS DE ALTA ESPECIFICACIÓN
-            (TIPO A2, TIPO A4)  - SERVICIO DE CONTROL DE CALIDAD EN CARRETERAS
+            (TIPO A2, TIPO A4) - SERVICIO DE CONTROL DE CALIDAD EN CARRETERAS
           </p>
         }
         // bgColor={undefined}

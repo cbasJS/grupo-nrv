@@ -1,9 +1,10 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
+import Image from "next/image";
 import { divisions } from "@/data/new-home";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import DivisionSlider from "@/components/ui/DivisionSlider";
 
 export default function DivisionsSection() {
   const { ref: headerRef, visible: headerVisible } =
@@ -50,14 +51,20 @@ export default function DivisionsSection() {
       {/* Grid */}
       <div ref={gridRef} className="grid grid-cols-2 gap-3 lg:gap-5">
         {divisions.map((division, idx) => {
-          const imageBlock = (
-            <Image
-              src={division.image}
-              alt={division.label}
-              fill
-              sizes="(max-width: 768px) 50vw, 40vw"
-              className="object-cover group-hover:scale-105 transition-transform duration-700"
-            />
+          const imageContainer = (
+            <div className="relative h-40 md:h-60 lg:h-72 overflow-hidden rounded-sm">
+              {division.images.length > 1 ? (
+                <DivisionSlider images={division.images} alt={division.label} />
+              ) : (
+                <Image
+                  src={division.images[0]}
+                  alt={division.label}
+                  fill
+                  sizes="(max-width: 768px) 50vw, 40vw"
+                  className="object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+              )}
+            </div>
           );
 
           return (
@@ -70,18 +77,13 @@ export default function DivisionsSection() {
                 animationDelay: gridVisible ? `${idx * 110}ms` : undefined,
               }}
             >
-              {/* Image */}
+              {/* Image / Slider */}
               {division.route ? (
-                <Link
-                  href={division.route}
-                  className="relative h-40 md:h-60 lg:h-72 overflow-hidden rounded-sm block"
-                >
-                  {imageBlock}
+                <Link href={division.route} className="block">
+                  {imageContainer}
                 </Link>
               ) : (
-                <div className="relative h-40 md:h-60 lg:h-72 overflow-hidden rounded-sm">
-                  {imageBlock}
-                </div>
+                imageContainer
               )}
 
               {/* Text */}

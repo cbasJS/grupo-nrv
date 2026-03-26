@@ -76,7 +76,7 @@ export default function Header() {
                     className="block px-6 py-4 text-sm hover:bg-[#216C36]/20 transition"
                     onClick={() => setSubmenuOpen(!submenuOpen)}
                   >
-                    NRV Ingeniería
+                    Nrv Ingeniería
                   </Link>
 
                   <Link
@@ -84,7 +84,7 @@ export default function Header() {
                     className="block px-6 py-4 text-sm hover:bg-[#216C36]/20 transition"
                     onClick={() => setSubmenuOpen(!submenuOpen)}
                   >
-                    SCAVARE
+                    Scavare
                   </Link>
                 </div>
               )}
@@ -154,7 +154,7 @@ export default function Header() {
                     setSubmenuOpen(!submenuOpen);
                   }}
                 >
-                  NRV Ingeniería
+                  Nrv Ingeniería
                 </Link>
                 <Link
                   href="/unidades-de-negocio/scavare"
@@ -163,7 +163,7 @@ export default function Header() {
                     setSubmenuOpen(!submenuOpen);
                   }}
                 >
-                  SCAVARE
+                  Scavare
                 </Link>
               </div>
             )}

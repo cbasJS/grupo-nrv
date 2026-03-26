@@ -3,7 +3,7 @@ export type Division = {
   label: string;
   description: string;
   link: string;
-  image: string;
+  images: string[];
   route?: string;
 };
 
@@ -20,31 +20,35 @@ export const divisions: Division[] = [
     id: 1,
     label: "División Construcción",
     description: "Ejecución de obras de ingeniería.",
-    link: "Conoce a NRV Ingeniería",
-    image: "/images/hero/home/slider1.jpg",
+    link: "Conoce a Nrv Ingeniería",
+    images: ["/images/hero/arrendamiento/slider3.jpg"],
     route: "/unidades-de-negocio/nrv-ingenieria",
   },
   {
     id: 2,
     label: "División Transporte",
     description: "Transporte de carga pesada y logística.",
-    link: "Conoce a ENEARVY Logistic",
-    image: "/images/hero/home/slider2.jpg",
+    link: "Conoce a Enearvy Logistic",
+    images: [
+      "/images/new-home/division-transporte/imagen1.jpg",
+      "/images/new-home/division-transporte/imagen2.jpg",
+      "/images/new-home/division-transporte/imagen3.jpg",
+    ],
   },
   {
     id: 3,
     label: "División Maquinaria",
     description: "Renta y operación de maquinaria pesada.",
-    link: "Conoce a SCAVARE",
-    image: "/images/hero/arrendamiento/slider3.jpg",
+    link: "Conoce a Scavare",
+    images: ["/images/hero/home/slider1.jpg"],
     route: "/unidades-de-negocio/scavare",
   },
   {
     id: 4,
     label: "División Agropecuaria",
     description: "Producción de leche, carne y silo.",
-    link: "Conoce a NARAVA",
-    image: "/images/new-home/narava.jpg",
+    link: "Conoce a Narava",
+    images: ["/images/new-home/narava.jpg"],
   },
 ];
 
