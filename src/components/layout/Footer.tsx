@@ -4,8 +4,11 @@ import { useState, useTransition } from "react";
 import { sendEmail } from "@/actions/sendEmail";
 import { Loader2 } from "lucide-react";
 import Form from "next/form";
+import { usePathname } from "next/navigation";
 
 export default function Footer() {
+  const pathname = usePathname();
+  if (pathname === "/new-home") return null;
   const [contactMessage, setContactMessage] = useState({
     name: "",
     text: "",

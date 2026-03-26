@@ -3,10 +3,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
   const [submenuOpen, setSubmenuOpen] = useState(false);
+  const pathname = usePathname();
+  const hideMenu = pathname === "/new-home";
 
   return (
     <header className="fixed w-full top-0 z-10">
@@ -27,16 +30,16 @@ export default function Header() {
             }}
           >
             <Image
-              src="/images/logo.png"
+              src="/images/logo-2.png"
               alt="Grupo NRV"
-              width={120}
-              height={40}
-              className="h-auto w-24"
+              width={161}
+              height={70}
+              className="h-9 w-auto md:h-11"
             />
           </Link>
 
           {/* Desktop menu */}
-          <nav className="hidden md:flex items-center gap-10 text-white relative">
+          <nav className={`hidden ${hideMenu ? "" : "md:flex"} items-center gap-10 text-white relative`}>
             <Link
               href="/"
               className="text-sm hover:text-[#216C36] transition font-extrabold"
@@ -100,7 +103,7 @@ export default function Header() {
           {/* Mobile button */}
           <button
             onClick={() => setOpen(!open)}
-            className="md:hidden text-white"
+            className={`${hideMenu ? "hidden" : "md:hidden"} text-white`}
             aria-label="Abrir menú"
           >
             <div className="space-y-1.5">
@@ -116,7 +119,7 @@ export default function Header() {
       </div>
 
       {/* Mobile menu */}
-      {open && (
+      {open && !hideMenu && (
         <div className="md:hidden bg-[#232323] text-white">
           <nav className="flex flex-col gap-4 px-6 py-6">
             <Link
