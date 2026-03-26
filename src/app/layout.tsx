@@ -1,4 +1,4 @@
-import { Roboto } from "next/font/google";
+import { Roboto, Roboto_Condensed, Syncopate } from "next/font/google";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import "keen-slider/keen-slider.min.css";
@@ -9,6 +9,18 @@ const robotoSans = Roboto({
   subsets: ["latin"],
 });
 
+const robotoCondensed = Roboto_Condensed({
+  variable: "--font-roboto-condensed",
+  subsets: ["latin"],
+  weight: "600",
+});
+
+const syncopate = Syncopate({
+  variable: "--font-syncopate",
+  subsets: ["latin"],
+  weight: "700",
+});
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -16,7 +28,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body className={`${robotoSans.variable} antialiased`}>
+      <body className={`${robotoSans.variable} ${robotoCondensed.variable} ${syncopate.variable} antialiased`}>
         <Header />
         <main>{children}</main>
         <Footer />

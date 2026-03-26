@@ -1,0 +1,73 @@
+export type Division = {
+  id: number;
+  label: string;
+  description: string;
+  link: string;
+  image: string;
+  route?: string;
+};
+
+export type ValueItem = {
+  id: number;
+  title: string;
+  description: string;
+  descriptionLines: [string, string];
+  icon: string;
+};
+
+export const divisions: Division[] = [
+  {
+    id: 1,
+    label: "División Construcción",
+    description: "Ejecución de obras de ingeniería.",
+    link: "Conoce a NRV Ingeniería",
+    image: "/images/hero/constructora/slider2.jpg",
+    route: "/unidades-de-negocio/nrv-ingenieria",
+  },
+  {
+    id: 2,
+    label: "División Transporte",
+    description: "Transporte de carga pesada y logística.",
+    link: "Conoce a ENEARVY Logistic",
+    image: "/images/hero/home/slider2.jpg",
+  },
+  {
+    id: 3,
+    label: "División Maquinaria",
+    description: "Renta y operación de maquinaria pesada.",
+    link: "Conoce a SCAVARE",
+    image: "/images/hero/arrendamiento/slider2.jpg",
+    route: "/unidades-de-negocio/arrendamiento",
+  },
+  {
+    id: 4,
+    label: "División Agropecuaria",
+    description: "Producción de leche, carne y silo.",
+    link: "Conoce a NAIVRA",
+    image: "/images/carousel/proyectos-destacados/slider3.jpg",
+  },
+];
+
+export const values: ValueItem[] = [
+  {
+    id: 1,
+    title: "COMPROMISO",
+    description: "Resultados garantizados con responsabilidad y transparencia.",
+    descriptionLines: ["Resultados garantizados con responsabilidad", "y transparencia."],
+    icon: "/images/new-home/compromiso_logo.png",
+  },
+  {
+    id: 2,
+    title: "EQUIPO",
+    description: "Profesionales capacitados que impulsan cada proyecto.",
+    descriptionLines: ["Profesionales capacitados que impulsan cada", "proyecto."],
+    icon: "/images/new-home/equipo_logo.png",
+  },
+  {
+    id: 3,
+    title: "EXCELENCIA",
+    description: "Estándares superiores en cada operación que realizamos.",
+    descriptionLines: ["Estándares superiores en cada operación que", "realizamos."],
+    icon: "/images/new-home/excelencia_logo.png",
+  },
+];
