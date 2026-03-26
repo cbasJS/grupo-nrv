@@ -9,7 +9,7 @@ export default function Header() {
   const [open, setOpen] = useState(false);
   const [submenuOpen, setSubmenuOpen] = useState(false);
   const pathname = usePathname();
-  const hideMenu = pathname === "/new-home";
+  const isHome = pathname === "/";
 
   return (
     <header className="fixed w-full top-0 z-10">
@@ -39,17 +39,19 @@ export default function Header() {
           </Link>
 
           {/* Desktop menu */}
-          <nav className={`hidden ${hideMenu ? "" : "md:flex"} items-center gap-10 text-white relative`}>
-            <Link
-              href="/"
-              className="text-sm hover:text-[#216C36] transition font-extrabold"
-              onClick={() => {
-                setOpen(false);
-                setSubmenuOpen(false);
-              }}
-            >
-              Inicio
-            </Link>
+          <nav className="hidden md:flex items-center gap-10 text-white relative">
+            {!isHome && (
+              <Link
+                href="/"
+                className="text-sm hover:text-[#216C36] transition font-extrabold"
+                onClick={() => {
+                  setOpen(false);
+                  setSubmenuOpen(false);
+                }}
+              >
+                Inicio
+              </Link>
+            )}
 
             <div className="relative">
               <button
@@ -70,19 +72,19 @@ export default function Header() {
               {submenuOpen && (
                 <div className="absolute left-1/2 top-full z-50 mt-4 w-72 -translate-x-1/2 rounded-xl bg-[#232323] opacity-90 shadow-2xl ring-1 ring-white/10">
                   <Link
-                    href="/unidades-de-negocio/arrendamiento"
+                    href="/unidades-de-negocio/nrv-ingenieria"
                     className="block px-6 py-4 text-sm hover:bg-[#216C36]/20 transition"
                     onClick={() => setSubmenuOpen(!submenuOpen)}
                   >
-                    Arrendamiento
+                    NRV Ingeniería
                   </Link>
 
                   <Link
-                    href="/unidades-de-negocio/constructora"
+                    href="/unidades-de-negocio/scavare"
                     className="block px-6 py-4 text-sm hover:bg-[#216C36]/20 transition"
                     onClick={() => setSubmenuOpen(!submenuOpen)}
                   >
-                    Constructora
+                    SCAVARE
                   </Link>
                 </div>
               )}
@@ -103,7 +105,7 @@ export default function Header() {
           {/* Mobile button */}
           <button
             onClick={() => setOpen(!open)}
-            className={`${hideMenu ? "hidden" : "md:hidden"} text-white`}
+            className="md:hidden text-white"
             aria-label="Abrir menú"
           >
             <div className="space-y-1.5">
@@ -119,19 +121,21 @@ export default function Header() {
       </div>
 
       {/* Mobile menu */}
-      {open && !hideMenu && (
+      {open && (
         <div className="md:hidden bg-[#232323] text-white">
           <nav className="flex flex-col gap-4 px-6 py-6">
-            <Link
-              href="/"
-              onClick={() => {
-                setOpen(false);
-                setSubmenuOpen(false);
-              }}
-              className="font-medium"
-            >
-              Inicio
-            </Link>
+            {!isHome && (
+              <Link
+                href="/"
+                onClick={() => {
+                  setOpen(false);
+                  setSubmenuOpen(false);
+                }}
+                className="font-medium"
+              >
+                Inicio
+              </Link>
+            )}
 
             <button
               onClick={() => setSubmenuOpen(!submenuOpen)}
@@ -144,22 +148,22 @@ export default function Header() {
             {submenuOpen && (
               <div className="ml-4 flex flex-col gap-3 text-sm">
                 <Link
-                  href="/unidades-de-negocio/constructora"
+                  href="/unidades-de-negocio/nrv-ingenieria"
                   onClick={() => {
                     setOpen(false);
                     setSubmenuOpen(!submenuOpen);
                   }}
                 >
-                  Constructora
+                  NRV Ingeniería
                 </Link>
                 <Link
-                  href="/unidades-de-negocio/arrendamiento"
+                  href="/unidades-de-negocio/scavare"
                   onClick={() => {
                     setOpen(false);
                     setSubmenuOpen(!submenuOpen);
                   }}
                 >
-                  Arrendamiento
+                  SCAVARE
                 </Link>
               </div>
             )}

@@ -8,16 +8,13 @@ import { usePathname } from "next/navigation";
 
 export default function Footer() {
   const pathname = usePathname();
-  if (pathname === "/new-home") return null;
+  if (pathname === "/") return null;
   const [contactMessage, setContactMessage] = useState({
     name: "",
     text: "",
     email: "",
   });
-  const [status, setStatus] = useState<"pending" | "sended" | "error">(
-    "pending"
-  );
-  const [isPending, startTransition] = useTransition();
+const [isPending, startTransition] = useTransition();
   const [currentBtnCopy, setCurrentBtnCopy] = useState("Envíar");
 
   const handleChange = ({ target }: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -32,14 +29,11 @@ export default function Footer() {
       const res = await sendEmail(formData);
 
       if (res.success) {
-        setStatus("sended");
         setContactMessage({ name: "", text: "", email: "" });
         setCurrentBtnCopy("¡Enviado!");
         setTimeout(() => {
           setCurrentBtnCopy("Envíar");
         }, 3000);
-      } else {
-        setStatus("error");
       }
     });
   }

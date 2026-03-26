@@ -21,7 +21,7 @@ export const divisions: Division[] = [
     label: "División Construcción",
     description: "Ejecución de obras de ingeniería.",
     link: "Conoce a NRV Ingeniería",
-    image: "/images/hero/constructora/slider2.jpg",
+    image: "/images/hero/home/slider1.jpg",
     route: "/unidades-de-negocio/nrv-ingenieria",
   },
   {
@@ -36,15 +36,15 @@ export const divisions: Division[] = [
     label: "División Maquinaria",
     description: "Renta y operación de maquinaria pesada.",
     link: "Conoce a SCAVARE",
-    image: "/images/hero/arrendamiento/slider2.jpg",
-    route: "/unidades-de-negocio/arrendamiento",
+    image: "/images/hero/arrendamiento/slider3.jpg",
+    route: "/unidades-de-negocio/scavare",
   },
   {
     id: 4,
     label: "División Agropecuaria",
     description: "Producción de leche, carne y silo.",
-    link: "Conoce a NAIVRA",
-    image: "/images/carousel/proyectos-destacados/slider3.jpg",
+    link: "Conoce a NARAVA",
+    image: "/images/new-home/narava.jpg",
   },
 ];
 
