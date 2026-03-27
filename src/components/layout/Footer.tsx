@@ -8,16 +8,20 @@ import { usePathname } from "next/navigation";
 
 export default function Footer() {
   const pathname = usePathname();
-  if (pathname === "/") return null;
   const [contactMessage, setContactMessage] = useState({
     name: "",
     text: "",
     email: "",
   });
-const [isPending, startTransition] = useTransition();
+  const [isPending, startTransition] = useTransition();
   const [currentBtnCopy, setCurrentBtnCopy] = useState("Envíar");
+  const [submitError, setSubmitError] = useState(false);
 
-  const handleChange = ({ target }: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  if (pathname === "/") return null;
+
+  const handleChange = ({
+    target,
+  }: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setContactMessage({
       ...contactMessage,
       [target.name]: target.value,
@@ -26,14 +30,17 @@ const [isPending, startTransition] = useTransition();
 
   function action(formData: FormData) {
     startTransition(async () => {
+      setSubmitError(false);
       const res = await sendEmail(formData);
-
       if (res.success) {
+        setSubmitError(false);
         setContactMessage({ name: "", text: "", email: "" });
         setCurrentBtnCopy("¡Enviado!");
         setTimeout(() => {
           setCurrentBtnCopy("Envíar");
         }, 3000);
+      } else {
+        setSubmitError(true);
       }
     });
   }
@@ -108,6 +115,11 @@ const [isPending, startTransition] = useTransition();
                   onChange={handleChange}
                   value={contactMessage.text}
                 />
+                {submitError && (
+                  <p className="text-red-400 text-xs font-mono tracking-widest mt-2">
+                    Error al enviar. Intente nuevamente.
+                  </p>
+                )}
               </div>
 
               <button
