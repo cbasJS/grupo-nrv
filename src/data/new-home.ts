@@ -40,7 +40,11 @@ export const divisions: Division[] = [
     label: "División Maquinaria",
     description: "Renta y operación de maquinaria pesada.",
     link: "Conoce a Scavare",
-    images: ["/images/new-home/division-maquinaria/imagen1.jpg"],
+    images: [
+      "/images/new-home/division-maquinaria/imagen1.jpg",
+      "/images/new-home/division-maquinaria/imagen2.jpg",
+      "/images/new-home/division-maquinaria/imagen3.jpg",
+    ],
     route: "/unidades-de-negocio/scavare",
   },
   {
@@ -48,7 +52,11 @@ export const divisions: Division[] = [
     label: "División Agropecuaria",
     description: "Producción de leche, carne y silo.",
     link: "Conoce a Narava",
-    images: ["/images/new-home/narava.jpg"],
+    images: [
+      "/images/new-home/division-agropecuaria/imagen1.jpg",
+      "/images/new-home/division-agropecuaria/imagen2.jpg",
+      "/images/new-home/division-agropecuaria/imagen3.jpg",
+    ],
   },
 ];
 
