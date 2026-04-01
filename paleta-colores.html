@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Paleta de Colores Suaves</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Georgia", serif;
+        background: #fff;
+        color: #6b6258;
+      }
+
+      header {
+        padding: 48px 32px 32px;
+        border-bottom: 1px solid #ede9e3;
+        background: #fdfcfb;
+      }
+      header h1 {
+        font-size: 0.85rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: #b5aa96;
+        font-weight: 400;
+      }
+      header p {
+        font-size: 1.9rem;
+        font-weight: 700;
+        color: #8a8075;
+        margin-top: 6px;
+      }
+      header span {
+        color: #c8c0b2;
+        font-weight: 300;
+      }
+
+      .palette {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(155px, 1fr));
+      }
+
+      .swatch {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .swatch-color {
+        height: 200px;
+        display: flex;
+        align-items: flex-end;
+        padding: 14px;
+      }
+
+      .chip {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .swatch-info {
+        padding: 16px;
+        background: #fff;
+        border-top: 3px solid currentColor;
+      }
+
+      .swatch-name {
+        font-size: 0.7rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: #b5aa96;
+        font-weight: 600;
+      }
+      .swatch-hex {
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: #8a8075;
+        margin-top: 4px;
+      }
+      .swatch-use {
+        font-size: 0.68rem;
+        color: #c0b8ae;
+        margin-top: 6px;
+        line-height: 1.5;
+      }
+
+      .usage {
+        padding: 48px 32px;
+        background: #faf8f5;
+        border-top: 1px solid #ede9e3;
+      }
+      .usage h2 {
+        font-size: 0.8rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: #c0b8ae;
+        margin-bottom: 28px;
+      }
+
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 20px;
+      }
+
+      .card {
+        background: #fff;
+        border-radius: 14px;
+        overflow: hidden;
+        box-shadow: 0 2px 20px rgba(181, 170, 150, 0.12);
+        border: 1px solid #ede9e3;
+      }
+
+      .card-top {
+        height: 70px;
+      }
+      .card-body {
+        padding: 20px;
+      }
+      .card-body h3 {
+        font-size: 0.9rem;
+        font-weight: 700;
+        color: #8a8075;
+      }
+      .card-body p {
+        font-size: 0.75rem;
+        color: #b5aa96;
+        margin-top: 6px;
+        line-height: 1.6;
+      }
+
+      .btn {
+        display: inline-block;
+        margin-top: 14px;
+        padding: 8px 20px;
+        border-radius: 30px;
+        font-size: 0.7rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        font-weight: 600;
+        cursor: pointer;
+        border: none;
+      }
+      .btn-primary {
+        background: #b5aa96;
+        color: #fff;
+      }
+      .btn-secondary {
+        background: transparent;
+        border: 1.5px solid #c8c0b2;
+        color: #a09587;
+      }
+      .btn-soft {
+        background: #ede9e3;
+        color: #8a8075;
+      }
+
+      .nav-preview {
+        margin: 0 32px 0;
+        border-radius: 14px;
+        overflow: hidden;
+        border: 1px solid #ede9e3;
+        box-shadow: 0 2px 20px rgba(181, 170, 150, 0.1);
+      }
+      .nav-bar {
+        background: #fff;
+        padding: 16px 24px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid #ede9e3;
+      }
+      .nav-logo {
+        font-size: 1rem;
+        font-weight: 700;
+        color: #8a8075;
+        letter-spacing: 0.05em;
+      }
+      .nav-links {
+        display: flex;
+        gap: 24px;
+      }
+      .nav-links a {
+        font-size: 0.72rem;
+        color: #b5aa96;
+        text-decoration: none;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+      .nav-links a.active {
+        color: #8a8075;
+        font-weight: 600;
+        border-bottom: 1.5px solid #c8c0b2;
+        padding-bottom: 2px;
+      }
+      .hero {
+        background: #faf8f5;
+        padding: 36px 24px;
+        text-align: center;
+      }
+      .hero h2 {
+        font-size: 1.5rem;
+        color: #8a8075;
+        font-weight: 700;
+      }
+      .hero p {
+        font-size: 0.82rem;
+        color: #b5aa96;
+        margin-top: 8px;
+        line-height: 1.7;
+      }
+      .hero-btns {
+        margin-top: 20px;
+        display: flex;
+        gap: 12px;
+        justify-content: center;
+      }
+
+      .code-block {
+        padding: 32px;
+        background: #fdfcfb;
+        border-top: 1px solid #ede9e3;
+        font-family: "Courier New", monospace;
+        font-size: 0.78rem;
+        line-height: 2;
+        overflow-x: auto;
+      }
+      .code-block .comment {
+        color: #d0c8be;
+      }
+      .code-block .var {
+        color: #a09587;
+      }
+      .code-block .val {
+        color: #b5aa96;
+        font-weight: 600;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Paleta de colores · Web</h1>
+      <p>Tonos suaves <span>+ blanco</span></p>
+    </header>
+
+    <div class="palette">
+      <div class="swatch">
+        <div
+          class="swatch-color"
+          style="background: #ffffff; border: 1px solid #ede9e3"
+        >
+          <div class="chip" style="background: #ede9e3"></div>
+        </div>
+        <div class="swatch-info" style="border-color: #ede9e3">
+          <div class="swatch-name">Blanco Puro</div>
+          <div class="swatch-hex">#FFFFFF</div>
+          <div class="swatch-use">Fondos principales, tarjetas</div>
+        </div>
+      </div>
+
+      <div class="swatch">
+        <div class="swatch-color" style="background: #faf8f5">
+          <div class="chip" style="background: #ede9e3"></div>
+        </div>
+        <div class="swatch-info" style="border-color: #ede9e3">
+          <div class="swatch-name">Crema Alba</div>
+          <div class="swatch-hex">#FAF8F5</div>
+          <div class="swatch-use">Fondos de sección, hero areas</div>
+        </div>
+      </div>
+
+      <div class="swatch">
+        <div class="swatch-color" style="background: #ede9e3">
+          <div class="chip" style="background: #d4cdc4"></div>
+        </div>
+        <div class="swatch-info" style="border-color: #d4cdc4">
+          <div class="swatch-name">Lino Claro</div>
+          <div class="swatch-hex">#EDE9E3</div>
+          <div class="swatch-use">Bordes, divisores, inputs</div>
+        </div>
+      </div>
+
+      <div class="swatch">
+        <div class="swatch-color" style="background: #c8c0b2">
+          <div class="chip" style="background: #fff; opacity: 0.9"></div>
+        </div>
+        <div class="swatch-info" style="border-color: #c8c0b2">
+          <div class="swatch-name">Arena Suave</div>
+          <div class="swatch-hex">#C8C0B2</div>
+          <div class="swatch-use">Íconos, etiquetas, acentos</div>
+        </div>
+      </div>
+
+      <div class="swatch">
+        <div class="swatch-color" style="background: #b5aa96">
+          <div class="chip" style="background: #fff; opacity: 0.9"></div>
+        </div>
+        <div class="swatch-info" style="border-color: #b5aa96">
+          <div class="swatch-name">Beige Tela</div>
+          <div class="swatch-hex">#B5AA96</div>
+          <div class="swatch-use">Color principal · botones, CTAs</div>
+        </div>
+      </div>
+
+      <div class="swatch">
+        <div class="swatch-color" style="background: #a09587">
+          <div class="chip" style="background: #fff; opacity: 0.85"></div>
+        </div>
+        <div class="swatch-info" style="border-color: #a09587">
+          <div class="swatch-name">Topo Cálido</div>
+          <div class="swatch-hex">#A09587</div>
+          <div class="swatch-use">Texto principal, títulos, hover</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- NAV PREVIEW -->
+    <div style="padding: 40px 32px 24px">
+      <p
+        style="
+          font-size: 0.75rem;
+          letter-spacing: 0.15em;
+          text-transform: uppercase;
+          color: #c0b8ae;
+          margin-bottom: 16px;
+        "
+      >
+        Vista previa · Navegación
+      </p>
+    </div>
+    <div class="nav-preview">
+      <div class="nav-bar">
+        <div class="nav-logo">Studio</div>
+        <div class="nav-links">
+          <a href="#" class="active">Inicio</a>
+          <a href="#">Nosotros</a>
+          <a href="#">Servicios</a>
+          <a href="#">Contacto</a>
+        </div>
+      </div>
+      <div class="hero">
+        <h2>Diseño con alma y calma</h2>
+        <p>
+          Espacios que respiran, paletas que enamoran.<br />Todo en tonos que
+          invitan a quedarse.
+        </p>
+        <div class="hero-btns">
+          <button class="btn btn-primary">Ver proyectos</button>
+          <button class="btn btn-secondary">Saber más</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARDS -->
+    <div class="usage">
+      <h2>Componentes · Botones y tarjetas</h2>
+      <div class="cards">
+        <div class="card">
+          <div class="card-top" style="background: #b5aa96"></div>
+          <div class="card-body">
+            <h3>Botón Principal</h3>
+            <p>
+              Beige Tela como acción primaria. Cálido y visible sin ser
+              agresivo.
+            </p>
+            <button class="btn btn-primary">Explorar →</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-top" style="background: #faf8f5"></div>
+          <div class="card-body">
+            <h3>Botón Secundario</h3>
+            <p>
+              Contorno Arena Suave para acciones secundarias sobre fondos
+              blancos.
+            </p>
+            <button class="btn btn-secondary">Ver más</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-top" style="background: #ede9e3"></div>
+          <div class="card-body">
+            <h3>Botón Suave</h3>
+            <p>
+              Lino Claro de fondo para acciones terciarias o etiquetas neutras.
+            </p>
+            <button class="btn btn-soft">Categoría</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CSS VARS -->
+    <div class="code-block">
+      <span class="comment"
+        >/* ── Variables CSS · Copia en tu proyecto ── */</span
+      ><br />
+      :root {<br />
+      &nbsp;&nbsp;<span class="var">--color-white</span
+      >:&nbsp;&nbsp;&nbsp;&nbsp;<span class="val">#FFFFFF</span
+      >;&nbsp;&nbsp;<span class="comment">/* Blanco Puro */</span><br />
+      &nbsp;&nbsp;<span class="var">--color-cream</span
+      >:&nbsp;&nbsp;&nbsp;&nbsp;<span class="val">#FAF8F5</span
+      >;&nbsp;&nbsp;<span class="comment">/* Crema Alba */</span><br />
+      &nbsp;&nbsp;<span class="var">--color-linen</span
+      >:&nbsp;&nbsp;&nbsp;&nbsp;<span class="val">#EDE9E3</span
+      >;&nbsp;&nbsp;<span class="comment">/* Lino Claro */</span><br />
+      &nbsp;&nbsp;<span class="var">--color-sand</span
+      >:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="val">#C8C0B2</span
+      >;&nbsp;&nbsp;<span class="comment">/* Arena Suave */</span><br />
+      &nbsp;&nbsp;<span class="var">--color-beige</span
+      >:&nbsp;&nbsp;&nbsp;&nbsp;<span class="val">#B5AA96</span
+      >;&nbsp;&nbsp;<span class="comment">/* Beige Tela · Principal */</span
+      ><br />
+      &nbsp;&nbsp;<span class="var">--color-taupe</span
+      >:&nbsp;&nbsp;&nbsp;&nbsp;<span class="val">#A09587</span
+      >;&nbsp;&nbsp;<span class="comment">/* Topo Cálido · Texto */</span><br />
+      }
+    </div>
+  </body>
+</html>
