@@ -59,6 +59,7 @@
   --color-sand:  #c8c0b2;   /* Arena Suave  · íconos, etiquetas, acentos */
   --color-beige: #b5aa96;   /* Beige Tela   · color principal, botones, CTAs */
   --color-taupe: #a09587;   /* Topo Cálido  · texto principal, títulos, hover */
+  --color-copy:  #4A3F35;   /* Cacao Profundo · copies */
 }
 
 @theme inline {

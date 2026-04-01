@@ -52,7 +52,7 @@ export default function AboutSectionSoft() {
             style={{
               fontFamily: "var(--font-roboto-sans)",
               fontWeight: 400,
-              color: "var(--color-taupe)",
+              color: "var(--color-copy)",
               fontSize: "clamp(14px, 2vw, 24px)",
               animationDelay: textVisible ? "240ms" : undefined,
             }}
@@ -67,7 +67,7 @@ export default function AboutSectionSoft() {
             style={{
               fontFamily: "var(--font-roboto-sans)",
               fontWeight: 400,
-              color: "var(--color-taupe)",
+              color: "var(--color-copy)",
               fontSize: "clamp(14px, 2vw, 24px)",
               animationDelay: textVisible ? "340ms" : undefined,
             }}
@@ -106,7 +106,7 @@ export default function AboutSectionSoft() {
                 style={{
                   fontFamily: "var(--font-roboto-sans)",
                   fontWeight: 700,
-                  color: "var(--color-taupe)",
+                  color: "var(--color-copy)",
                 }}
                 className="text-[12px] lg:text-2xl group-hover:text-(--color-beige) transition-colors duration-300"
               >
@@ -116,7 +116,7 @@ export default function AboutSectionSoft() {
                 style={{
                   fontFamily: "var(--font-roboto-sans)",
                   fontWeight: 400,
-                  color: "var(--color-sand)",
+                  color: "var(--color-copy)",
                 }}
                 className="text-[10px] lg:text-base mt-0.5"
               >

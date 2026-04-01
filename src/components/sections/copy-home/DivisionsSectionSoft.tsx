@@ -104,7 +104,7 @@ export default function DivisionsSectionSoft() {
                   style={{
                     fontFamily: "var(--font-roboto-sans)",
                     fontWeight: 400,
-                    color: "var(--color-taupe)",
+                    color: "var(--color-copy)",
                     fontSize: "clamp(12px, 1.1vw, 14px)",
                     lineHeight: 1.3,
                   }}
@@ -118,7 +118,7 @@ export default function DivisionsSectionSoft() {
                     style={{
                       fontFamily: "var(--font-roboto-sans)",
                       fontWeight: 400,
-                      color: "var(--color-sand)",
+                      color: "var(--color-copy)",
                       fontSize: "clamp(11px, 1vw, 13px)",
                     }}
                   >
@@ -130,7 +130,7 @@ export default function DivisionsSectionSoft() {
                     style={{
                       fontFamily: "var(--font-roboto-sans)",
                       fontWeight: 400,
-                      color: "var(--color-sand)",
+                      color: "var(--color-copy)",
                       fontSize: "clamp(11px, 1vw, 13px)",
                     }}
                   >

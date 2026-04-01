@@ -78,7 +78,7 @@ export default function HeaderSoft() {
                   <Link
                     href="/unidades-de-negocio/nrv-ingenieria"
                     className="block px-6 py-4 text-sm transition"
-                    style={{ color: "var(--color-taupe)" }}
+                    style={{ color: "var(--color-copy)" }}
                     onMouseEnter={e => (e.currentTarget.style.background = "var(--color-cream)")}
                     onMouseLeave={e => (e.currentTarget.style.background = "transparent")}
                     onClick={() => setSubmenuOpen(!submenuOpen)}
@@ -88,7 +88,7 @@ export default function HeaderSoft() {
                   <Link
                     href="/unidades-de-negocio/scavare"
                     className="block px-6 py-4 text-sm transition"
-                    style={{ color: "var(--color-taupe)" }}
+                    style={{ color: "var(--color-copy)" }}
                     onMouseEnter={e => (e.currentTarget.style.background = "var(--color-cream)")}
                     onMouseLeave={e => (e.currentTarget.style.background = "transparent")}
                     onClick={() => setSubmenuOpen(!submenuOpen)}
@@ -135,7 +135,7 @@ export default function HeaderSoft() {
       {/* Mobile menu */}
       {open && (
         <div className="md:hidden border-t" style={{ background: "var(--color-white)", borderColor: "var(--color-linen)" }}>
-          <nav className="flex flex-col gap-4 px-6 py-6" style={{ color: "var(--color-taupe)" }}>
+          <nav className="flex flex-col gap-4 px-6 py-6" style={{ color: "var(--color-copy)" }}>
             {!isHome && (
               <Link
                 href="/copy-home"
@@ -158,7 +158,7 @@ export default function HeaderSoft() {
             </button>
 
             {submenuOpen && (
-              <div className="ml-4 flex flex-col gap-3 text-sm" style={{ color: "var(--color-sand)" }}>
+              <div className="ml-4 flex flex-col gap-3 text-sm" style={{ color: "var(--color-copy)" }}>
                 <Link
                   href="/unidades-de-negocio/nrv-ingenieria"
                   onClick={() => { setOpen(false); setSubmenuOpen(!submenuOpen); }}
