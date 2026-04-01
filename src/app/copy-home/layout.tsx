@@ -1,5 +1,5 @@
 import HeaderSoft from "@/components/layout/copy-home/HeaderSoft";
-import FooterSoft from "@/components/layout/copy-home/FooterSoft";
+import FooterBackTopWrapper from "@/components/layout/copy-home/FooterBackTopWrapper";
 
 export default function CopyHomeLayout({
   children,
@@ -10,7 +10,7 @@ export default function CopyHomeLayout({
     <>
       <HeaderSoft />
       {children}
-      <FooterSoft />
+      <FooterBackTopWrapper />
     </>
   );
 }

@@ -12,7 +12,7 @@ export default function HeaderSoft() {
   const isHome = pathname === "/copy-home";
 
   return (
-    <header className="fixed w-full top-0 z-10">
+    <header className="w-full">
       {/* Background */}
       <div className="relative h-16 md:h-20 w-full">
         {/* Overlay — frosted glass cálido */}
