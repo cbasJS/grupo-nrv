@@ -5,26 +5,27 @@ import Link from "next/link";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 
-export default function Header() {
+export default function HeaderSoft() {
   const [open, setOpen] = useState(false);
   const [submenuOpen, setSubmenuOpen] = useState(false);
   const pathname = usePathname();
-  const isHome = pathname === "/";
-
-  if (pathname === "/copy-home") return null;
+  const isHome = pathname === "/copy-home";
 
   return (
     <header className="fixed w-full top-0 z-10">
       {/* Background */}
       <div className="relative h-16 md:h-20 w-full">
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-[#232323] opacity-55" />
+        {/* Overlay — frosted glass cálido */}
+        <div
+          className="absolute inset-0 backdrop-blur-md"
+          style={{ background: "rgba(160, 149, 135, 0.82)" }}
+        />
 
         {/* Content */}
         <div className="relative z-10 flex h-full items-center justify-between px-4 lg:px-12 xl:px-16">
           {/* Logo */}
           <Link
-            href="/"
+            href="/copy-home"
             className="flex items-center gap-2"
             onClick={() => {
               setOpen(false);
@@ -41,11 +42,14 @@ export default function Header() {
           </Link>
 
           {/* Desktop menu */}
-          <nav className="hidden md:flex items-center gap-10 text-white relative">
+          <nav className="hidden md:flex items-center gap-10 relative" style={{ color: "#FAF8F5" }}>
             {!isHome && (
               <Link
-                href="/"
-                className="text-sm hover:text-[#216C36] transition font-extrabold"
+                href="/copy-home"
+                className="text-sm font-extrabold transition"
+                style={{ color: "#FAF8F5" }}
+                onMouseEnter={e => (e.currentTarget.style.color = "#EDE9E3")}
+                onMouseLeave={e => (e.currentTarget.style.color = "#FAF8F5")}
                 onClick={() => {
                   setOpen(false);
                   setSubmenuOpen(false);
@@ -58,32 +62,35 @@ export default function Header() {
             <div className="relative">
               <button
                 onClick={() => setSubmenuOpen(!submenuOpen)}
-                className="flex items-center gap-1 font-extrabold hover:text-[#216C36] transition cursor-pointer text-sm"
+                className="flex items-center gap-1 font-extrabold transition cursor-pointer text-sm"
+                style={{ color: "#FAF8F5" }}
               >
                 Unidades de negocio
-                <span
-                  className={`transition-transform ${
-                    submenuOpen ? "rotate-180" : ""
-                  }`}
-                >
-                  ▾
-                </span>
+                <span className={`transition-transform ${submenuOpen ? "rotate-180" : ""}`}>▾</span>
               </button>
 
               {/* Submenu panel */}
               {submenuOpen && (
-                <div className="absolute left-1/2 top-full z-50 mt-4 w-72 -translate-x-1/2 rounded-xl bg-[#232323] opacity-90 shadow-2xl ring-1 ring-white/10">
+                <div
+                  className="absolute left-1/2 top-full z-50 mt-4 w-72 -translate-x-1/2 rounded-xl shadow-2xl border"
+                  style={{ background: "#FFFFFF", borderColor: "#EDE9E3" }}
+                >
                   <Link
                     href="/unidades-de-negocio/nrv-ingenieria"
-                    className="block px-6 py-4 text-sm hover:bg-[#216C36]/20 transition"
+                    className="block px-6 py-4 text-sm transition"
+                    style={{ color: "#A09587" }}
+                    onMouseEnter={e => (e.currentTarget.style.background = "#FAF8F5")}
+                    onMouseLeave={e => (e.currentTarget.style.background = "transparent")}
                     onClick={() => setSubmenuOpen(!submenuOpen)}
                   >
                     Nrv Ingeniería
                   </Link>
-
                   <Link
                     href="/unidades-de-negocio/scavare"
-                    className="block px-6 py-4 text-sm hover:bg-[#216C36]/20 transition"
+                    className="block px-6 py-4 text-sm transition"
+                    style={{ color: "#A09587" }}
+                    onMouseEnter={e => (e.currentTarget.style.background = "#FAF8F5")}
+                    onMouseLeave={e => (e.currentTarget.style.background = "transparent")}
                     onClick={() => setSubmenuOpen(!submenuOpen)}
                   >
                     Scavare
@@ -94,7 +101,10 @@ export default function Header() {
 
             <Link
               href="/nosotros"
-              className="font-extrabold hover:text-[#216C36] transition text-sm"
+              className="font-extrabold transition text-sm"
+              style={{ color: "#FAF8F5" }}
+              onMouseEnter={e => (e.currentTarget.style.color = "#EDE9E3")}
+              onMouseLeave={e => (e.currentTarget.style.color = "#FAF8F5")}
               onClick={() => {
                 setOpen(false);
                 setSubmenuOpen(false);
@@ -107,28 +117,28 @@ export default function Header() {
           {/* Mobile button */}
           <button
             onClick={() => setOpen(!open)}
-            className="md:hidden text-white"
+            className="md:hidden"
             aria-label="Abrir menú"
           >
             <div className="space-y-1.5">
-              <span className="block h-0.5 w-6 bg-white" />
-              <span className="block h-0.5 w-6 bg-white" />
-              <span className="block h-0.5 w-6 bg-white" />
+              <span className="block h-0.5 w-6 bg-[#FAF8F5]" />
+              <span className="block h-0.5 w-6 bg-[#FAF8F5]" />
+              <span className="block h-0.5 w-6 bg-[#FAF8F5]" />
             </div>
           </button>
         </div>
 
-        {/* Bottom green line */}
-        <div className="absolute bottom-0 left-0 h-1 md:h-1.5 w-full bg-[#216C36]" />
+        {/* Bottom line */}
+        <div className="absolute bottom-0 left-0 h-px w-full" style={{ background: "rgba(237, 233, 227, 0.3)" }} />
       </div>
 
       {/* Mobile menu */}
       {open && (
-        <div className="md:hidden bg-[#232323] text-white">
-          <nav className="flex flex-col gap-4 px-6 py-6">
+        <div className="md:hidden border-t" style={{ background: "#FFFFFF", borderColor: "#EDE9E3" }}>
+          <nav className="flex flex-col gap-4 px-6 py-6" style={{ color: "#A09587" }}>
             {!isHome && (
               <Link
-                href="/"
+                href="/copy-home"
                 onClick={() => {
                   setOpen(false);
                   setSubmenuOpen(false);
@@ -148,22 +158,16 @@ export default function Header() {
             </button>
 
             {submenuOpen && (
-              <div className="ml-4 flex flex-col gap-3 text-sm">
+              <div className="ml-4 flex flex-col gap-3 text-sm" style={{ color: "#C8C0B2" }}>
                 <Link
                   href="/unidades-de-negocio/nrv-ingenieria"
-                  onClick={() => {
-                    setOpen(false);
-                    setSubmenuOpen(!submenuOpen);
-                  }}
+                  onClick={() => { setOpen(false); setSubmenuOpen(!submenuOpen); }}
                 >
                   Nrv Ingeniería
                 </Link>
                 <Link
                   href="/unidades-de-negocio/scavare"
-                  onClick={() => {
-                    setOpen(false);
-                    setSubmenuOpen(!submenuOpen);
-                  }}
+                  onClick={() => { setOpen(false); setSubmenuOpen(!submenuOpen); }}
                 >
                   Scavare
                 </Link>
@@ -172,10 +176,7 @@ export default function Header() {
 
             <Link
               href="/nosotros"
-              onClick={() => {
-                setOpen(false);
-                setSubmenuOpen(false);
-              }}
+              onClick={() => { setOpen(false); setSubmenuOpen(false); }}
               className="font-medium"
             >
               Sobre nosotros

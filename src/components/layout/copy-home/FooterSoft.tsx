@@ -6,7 +6,7 @@ import { Loader2 } from "lucide-react";
 import Form from "next/form";
 import { usePathname } from "next/navigation";
 
-export default function Footer() {
+export default function FooterSoft() {
   const pathname = usePathname();
   const [contactMessage, setContactMessage] = useState({
     name: "",
@@ -46,12 +46,18 @@ export default function Footer() {
   }
 
   return (
-    <footer className=" text-white px-6 py-10 md:px-24 lg:px-28 xl:px-56">
+    <footer
+      className="px-6 py-10 md:px-24 lg:px-28 xl:px-56 backdrop-blur-md md:h-16.25 md:py-0 md:flex md:items-center md:overflow-hidden"
+      style={{ background: "rgba(181, 170, 150, 0.12)", color: "#FAF8F5" }}
+    >
       <div className="max-w-7xl mx-auto">
         {/* Contenido principal */}
         <div className="grid grid-cols-3 lg:grid-cols-[auto_auto_auto_1fr] gap-2 md:gap-20 md:gap-y-10 items-center">
           {/* Columna 1 */}
-          <ul className="space-y-2 text-xs md:text-md lg:space-y-4">
+          <ul
+            className="space-y-2 text-xs md:text-md lg:space-y-4"
+            style={{ color: "#FAF8F5" }}
+          >
             <li>Sobre</li>
             <li>Nosotros</li>
             <li>Misión</li>
@@ -60,7 +66,10 @@ export default function Footer() {
           </ul>
 
           {/* Columna 2 */}
-          <ul className="space-y-2 text-xs md:text-md lg:space-y-4">
+          <ul
+            className="space-y-2 text-xs md:text-md lg:space-y-4"
+            style={{ color: "#FAF8F5" }}
+          >
             <li>Constructora</li>
             <li>Galería</li>
             <li>Proyectos</li>
@@ -68,7 +77,10 @@ export default function Footer() {
           </ul>
 
           {/* Columna 3 */}
-          <ul className="space-y-2 text-xs md:text-md lg:space-y-4">
+          <ul
+            className="space-y-2 text-xs md:text-md lg:space-y-4"
+            style={{ color: "#FAF8F5" }}
+          >
             <li>Arrendamientos</li>
             <li>Galería</li>
             <li>Proyectos</li>
@@ -77,17 +89,30 @@ export default function Footer() {
 
           {/* Formulario */}
           <div className="col-span-3 lg:col-auto mt-8 md:mt-0">
-            <h3 className="font-semibold mb-4 hidden md:block text-center">
+            <h3
+              className="font-semibold mb-4 hidden md:block text-center"
+              style={{ color: "#FAF8F5" }}
+            >
               CONTÁCTANOS
             </h3>
 
             <Form action={action} className="space-y-4 flex flex-col">
               <div>
-                <label className="block text-sm mb-1">Nombre</label>
+                <label
+                  className="block text-sm mb-1"
+                  style={{ color: "#FAF8F5" }}
+                >
+                  Nombre
+                </label>
                 <input
                   type="text"
                   placeholder="Nombre"
-                  className="w-full rounded-lg px-4 py-2 text-black focus:outline-none bg-white"
+                  className="w-full rounded-lg px-4 py-2 focus:outline-none border"
+                  style={{
+                    background: "rgba(255,255,255,0.15)",
+                    color: "#FAF8F5",
+                    borderColor: "rgba(237, 233, 227, 0.4)",
+                  }}
                   onChange={handleChange}
                   name="name"
                   value={contactMessage.name}
@@ -95,11 +120,21 @@ export default function Footer() {
               </div>
 
               <div>
-                <label className="block text-sm mb-1">Correo electrónico</label>
+                <label
+                  className="block text-sm mb-1"
+                  style={{ color: "#FAF8F5" }}
+                >
+                  Correo electrónico
+                </label>
                 <input
                   type="email"
                   placeholder="correo@correo.com"
-                  className="w-full rounded-lg px-4 py-2 text-black focus:outline-none bg-white"
+                  className="w-full rounded-lg px-4 py-2 focus:outline-none border"
+                  style={{
+                    background: "rgba(255,255,255,0.15)",
+                    color: "#FAF8F5",
+                    borderColor: "rgba(237, 233, 227, 0.4)",
+                  }}
                   name="email"
                   onChange={handleChange}
                   value={contactMessage.email}
@@ -107,10 +142,20 @@ export default function Footer() {
               </div>
 
               <div>
-                <label className="block text-sm mb-1">Mensaje</label>
+                <label
+                  className="block text-sm mb-1"
+                  style={{ color: "#FAF8F5" }}
+                >
+                  Mensaje
+                </label>
                 <textarea
                   rows={3}
-                  className="w-full rounded-lg px-4 py-2 text-black focus:outline-none resize-none bg-white"
+                  className="w-full rounded-lg px-4 py-2 focus:outline-none resize-none border"
+                  style={{
+                    background: "rgba(255,255,255,0.15)",
+                    color: "#FAF8F5",
+                    borderColor: "rgba(237, 233, 227, 0.4)",
+                  }}
                   name="text"
                   onChange={handleChange}
                   value={contactMessage.text}
@@ -124,7 +169,8 @@ export default function Footer() {
 
               <button
                 type="submit"
-                className="bg-[#009951] hover:bg-[#009951]/95 transition px-8 py-2 rounded-lg text-sm cursor-pointer self-end flex disabled:opacity-50 disabled:cursor-not-allowed"
+                className="px-8 py-2 rounded-lg text-sm cursor-pointer self-end flex disabled:opacity-50 disabled:cursor-not-allowed transition"
+                style={{ background: "rgba(255,255,255,0.2)", color: "#FAF8F5", border: "1px solid rgba(255,255,255,0.35)" }}
                 disabled={
                   isPending ||
                   !contactMessage.name ||
@@ -146,7 +192,10 @@ export default function Footer() {
         </div>
 
         {/* Footer bottom */}
-        <div className="mt-14 text-center text-sm text-gray-300 space-y-2">
+        <div
+          className="mt-6 md:mt-3 text-center text-sm space-y-2"
+          style={{ color: "#FAF8F5" }}
+        >
           <p>© 2025, Todos los derechos reservados</p>
         </div>
       </div>

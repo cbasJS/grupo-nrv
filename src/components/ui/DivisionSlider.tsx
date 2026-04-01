@@ -32,19 +32,22 @@ export default function DivisionSlider({ images, alt }: DivisionSliderProps) {
         slider.on("dragStarted", clearNextTimeout);
         slider.on("animationStarted", clearNextTimeout);
       },
-    ]
+    ],
   );
 
   return (
     <div ref={sliderRef} className="keen-slider h-full w-full">
       {images.map((src) => (
-        <div key={src} className="keen-slider__slide relative min-w-full h-full">
+        <div
+          key={src}
+          className="keen-slider__slide relative min-w-full h-full"
+        >
           <Image
             src={src}
             alt={alt}
             fill
             sizes="(max-width: 768px) 50vw, 40vw"
-            className="object-cover"
+            className="object-cover object-center"
           />
         </div>
       ))}
