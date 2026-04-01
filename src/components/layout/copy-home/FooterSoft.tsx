@@ -48,7 +48,7 @@ export default function FooterSoft() {
   return (
     <footer
       className="px-6 py-10 md:px-24 lg:px-28 xl:px-56 backdrop-blur-md md:h-16.25 md:py-0 md:flex md:items-center md:overflow-hidden"
-      style={{ background: "rgba(181, 170, 150, 0.12)", color: "#FAF8F5" }}
+      style={{ background: "rgba(181, 170, 150, 0.12)", color: "var(--color-cream)" }}
     >
       <div className="max-w-7xl mx-auto">
         {/* Contenido principal */}
@@ -56,7 +56,7 @@ export default function FooterSoft() {
           {/* Columna 1 */}
           <ul
             className="space-y-2 text-xs md:text-md lg:space-y-4"
-            style={{ color: "#FAF8F5" }}
+            style={{ color: "var(--color-cream)" }}
           >
             <li>Sobre</li>
             <li>Nosotros</li>
@@ -68,7 +68,7 @@ export default function FooterSoft() {
           {/* Columna 2 */}
           <ul
             className="space-y-2 text-xs md:text-md lg:space-y-4"
-            style={{ color: "#FAF8F5" }}
+            style={{ color: "var(--color-cream)" }}
           >
             <li>Constructora</li>
             <li>Galería</li>
@@ -79,7 +79,7 @@ export default function FooterSoft() {
           {/* Columna 3 */}
           <ul
             className="space-y-2 text-xs md:text-md lg:space-y-4"
-            style={{ color: "#FAF8F5" }}
+            style={{ color: "var(--color-cream)" }}
           >
             <li>Arrendamientos</li>
             <li>Galería</li>
@@ -91,7 +91,7 @@ export default function FooterSoft() {
           <div className="col-span-3 lg:col-auto mt-8 md:mt-0">
             <h3
               className="font-semibold mb-4 hidden md:block text-center"
-              style={{ color: "#FAF8F5" }}
+              style={{ color: "var(--color-cream)" }}
             >
               CONTÁCTANOS
             </h3>
@@ -100,7 +100,7 @@ export default function FooterSoft() {
               <div>
                 <label
                   className="block text-sm mb-1"
-                  style={{ color: "#FAF8F5" }}
+                  style={{ color: "var(--color-cream)" }}
                 >
                   Nombre
                 </label>
@@ -110,7 +110,7 @@ export default function FooterSoft() {
                   className="w-full rounded-lg px-4 py-2 focus:outline-none border"
                   style={{
                     background: "rgba(255,255,255,0.15)",
-                    color: "#FAF8F5",
+                    color: "var(--color-cream)",
                     borderColor: "rgba(237, 233, 227, 0.4)",
                   }}
                   onChange={handleChange}
@@ -122,7 +122,7 @@ export default function FooterSoft() {
               <div>
                 <label
                   className="block text-sm mb-1"
-                  style={{ color: "#FAF8F5" }}
+                  style={{ color: "var(--color-cream)" }}
                 >
                   Correo electrónico
                 </label>
@@ -132,7 +132,7 @@ export default function FooterSoft() {
                   className="w-full rounded-lg px-4 py-2 focus:outline-none border"
                   style={{
                     background: "rgba(255,255,255,0.15)",
-                    color: "#FAF8F5",
+                    color: "var(--color-cream)",
                     borderColor: "rgba(237, 233, 227, 0.4)",
                   }}
                   name="email"
@@ -144,7 +144,7 @@ export default function FooterSoft() {
               <div>
                 <label
                   className="block text-sm mb-1"
-                  style={{ color: "#FAF8F5" }}
+                  style={{ color: "var(--color-cream)" }}
                 >
                   Mensaje
                 </label>
@@ -153,7 +153,7 @@ export default function FooterSoft() {
                   className="w-full rounded-lg px-4 py-2 focus:outline-none resize-none border"
                   style={{
                     background: "rgba(255,255,255,0.15)",
-                    color: "#FAF8F5",
+                    color: "var(--color-cream)",
                     borderColor: "rgba(237, 233, 227, 0.4)",
                   }}
                   name="text"
@@ -170,7 +170,7 @@ export default function FooterSoft() {
               <button
                 type="submit"
                 className="px-8 py-2 rounded-lg text-sm cursor-pointer self-end flex disabled:opacity-50 disabled:cursor-not-allowed transition"
-                style={{ background: "rgba(255,255,255,0.2)", color: "#FAF8F5", border: "1px solid rgba(255,255,255,0.35)" }}
+                style={{ background: "rgba(255,255,255,0.2)", color: "var(--color-cream)", border: "1px solid rgba(255,255,255,0.35)" }}
                 disabled={
                   isPending ||
                   !contactMessage.name ||
@@ -194,7 +194,7 @@ export default function FooterSoft() {
         {/* Footer bottom */}
         <div
           className="mt-6 md:mt-3 text-center text-sm space-y-2"
-          style={{ color: "#FAF8F5" }}
+          style={{ color: "var(--color-cream)" }}
         >
           <p>© 2025, Todos los derechos reservados</p>
         </div>

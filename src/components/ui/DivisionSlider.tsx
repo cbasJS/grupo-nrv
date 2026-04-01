@@ -1,8 +1,8 @@
 "use client";
 
 import Image from "next/image";
+import { useState } from "react";
 import { useKeenSlider } from "keen-slider/react";
-import "keen-slider/keen-slider.min.css";
 
 interface DivisionSliderProps {
   images: string[];
@@ -10,10 +10,15 @@ interface DivisionSliderProps {
 }
 
 export default function DivisionSlider({ images, alt }: DivisionSliderProps) {
-  const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>(
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const [sliderRef] = useKeenSlider<HTMLDivElement>(
     {
       loop: true,
       drag: true,
+      slideChanged(s) {
+        setCurrentSlide(s.track.details.rel);
+      },
     },
     [
       (slider) => {
@@ -23,7 +28,7 @@ export default function DivisionSlider({ images, alt }: DivisionSliderProps) {
 
         const nextTimeout = () => {
           clearTimeout(timeout);
-          timeout = setTimeout(() => slider.next(), 3000);
+          timeout = setTimeout(() => slider.next(), 2000);
         };
 
         slider.on("created", nextTimeout);
@@ -37,17 +42,19 @@ export default function DivisionSlider({ images, alt }: DivisionSliderProps) {
 
   return (
     <div ref={sliderRef} className="keen-slider h-full w-full">
-      {images.map((src) => (
+      {images.map((src, idx) => (
         <div
           key={src}
-          className="keen-slider__slide relative min-w-full h-full"
+          className="keen-slider__slide relative min-w-full h-full overflow-hidden"
         >
           <Image
             src={src}
             alt={alt}
             fill
             sizes="(max-width: 768px) 50vw, 40vw"
-            className="object-cover object-center"
+            className={`object-cover object-center transition-transform ease-out ${
+              currentSlide === idx ? "scale-100 duration-3000" : "scale-110"
+            }`}
           />
         </div>
       ))}

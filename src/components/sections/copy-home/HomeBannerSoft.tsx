@@ -9,7 +9,10 @@ const headingStyle = (fontSize: string, textShadow: string): CSSProperties => ({
   textShadow,
 });
 
-const subtitleStyle = (fontSize: string, textShadow: string): CSSProperties => ({
+const subtitleStyle = (
+  fontSize: string,
+  textShadow: string,
+): CSSProperties => ({
   fontFamily: "var(--font-roboto-condensed)",
   fontWeight: 600,
   color: "#C8C0B2",
@@ -24,7 +27,7 @@ export default function HomeBannerSoft() {
       <div className="relative md:hidden h-80 w-full overflow-hidden">
         <div className="absolute inset-0 animate-nrv-ken-burns">
           <Image
-            src="/images/new-home/banner_mobile_640x400.jpg"
+            src="/images/new-home/banner_mobile_640x400_v2.jpg"
             alt="Grupo NRV"
             fill
             sizes="100vw"
@@ -46,7 +49,10 @@ export default function HomeBannerSoft() {
           <p
             className="mt-1 animate-nrv-rise"
             style={{
-              ...subtitleStyle("16px", "0 1px 12px rgba(0,0,0,0.95), 0 0 24px rgba(0,0,0,0.8)"),
+              ...subtitleStyle(
+                "16px",
+                "0 1px 12px rgba(0,0,0,0.95), 0 0 24px rgba(0,0,0,0.8)",
+              ),
               animationDelay: "480ms",
             }}
           >
@@ -92,7 +98,10 @@ export default function HomeBannerSoft() {
           <p
             className="mt-2 max-w-3xl animate-nrv-rise"
             style={{
-              ...subtitleStyle("40px", "0 2px 20px rgba(0,0,0,0.95), 0 0 40px rgba(0,0,0,0.7)"),
+              ...subtitleStyle(
+                "40px",
+                "0 2px 20px rgba(0,0,0,0.95), 0 0 40px rgba(0,0,0,0.7)",
+              ),
               animationDelay: "500ms",
             }}
           >

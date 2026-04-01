@@ -42,14 +42,14 @@ export default function HeaderSoft() {
           </Link>
 
           {/* Desktop menu */}
-          <nav className="hidden md:flex items-center gap-10 relative" style={{ color: "#FAF8F5" }}>
+          <nav className="hidden md:flex items-center gap-10 relative" style={{ color: "var(--color-cream)" }}>
             {!isHome && (
               <Link
                 href="/copy-home"
                 className="text-sm font-extrabold transition"
-                style={{ color: "#FAF8F5" }}
-                onMouseEnter={e => (e.currentTarget.style.color = "#EDE9E3")}
-                onMouseLeave={e => (e.currentTarget.style.color = "#FAF8F5")}
+                style={{ color: "var(--color-cream)" }}
+                onMouseEnter={e => (e.currentTarget.style.color = "var(--color-linen)")}
+                onMouseLeave={e => (e.currentTarget.style.color = "var(--color-cream)")}
                 onClick={() => {
                   setOpen(false);
                   setSubmenuOpen(false);
@@ -63,7 +63,7 @@ export default function HeaderSoft() {
               <button
                 onClick={() => setSubmenuOpen(!submenuOpen)}
                 className="flex items-center gap-1 font-extrabold transition cursor-pointer text-sm"
-                style={{ color: "#FAF8F5" }}
+                style={{ color: "var(--color-cream)" }}
               >
                 Unidades de negocio
                 <span className={`transition-transform ${submenuOpen ? "rotate-180" : ""}`}>▾</span>
@@ -73,13 +73,13 @@ export default function HeaderSoft() {
               {submenuOpen && (
                 <div
                   className="absolute left-1/2 top-full z-50 mt-4 w-72 -translate-x-1/2 rounded-xl shadow-2xl border"
-                  style={{ background: "#FFFFFF", borderColor: "#EDE9E3" }}
+                  style={{ background: "var(--color-white)", borderColor: "var(--color-linen)" }}
                 >
                   <Link
                     href="/unidades-de-negocio/nrv-ingenieria"
                     className="block px-6 py-4 text-sm transition"
-                    style={{ color: "#A09587" }}
-                    onMouseEnter={e => (e.currentTarget.style.background = "#FAF8F5")}
+                    style={{ color: "var(--color-copy)" }}
+                    onMouseEnter={e => (e.currentTarget.style.background = "var(--color-cream)")}
                     onMouseLeave={e => (e.currentTarget.style.background = "transparent")}
                     onClick={() => setSubmenuOpen(!submenuOpen)}
                   >
@@ -88,8 +88,8 @@ export default function HeaderSoft() {
                   <Link
                     href="/unidades-de-negocio/scavare"
                     className="block px-6 py-4 text-sm transition"
-                    style={{ color: "#A09587" }}
-                    onMouseEnter={e => (e.currentTarget.style.background = "#FAF8F5")}
+                    style={{ color: "var(--color-copy)" }}
+                    onMouseEnter={e => (e.currentTarget.style.background = "var(--color-cream)")}
                     onMouseLeave={e => (e.currentTarget.style.background = "transparent")}
                     onClick={() => setSubmenuOpen(!submenuOpen)}
                   >
@@ -102,9 +102,9 @@ export default function HeaderSoft() {
             <Link
               href="/nosotros"
               className="font-extrabold transition text-sm"
-              style={{ color: "#FAF8F5" }}
-              onMouseEnter={e => (e.currentTarget.style.color = "#EDE9E3")}
-              onMouseLeave={e => (e.currentTarget.style.color = "#FAF8F5")}
+              style={{ color: "var(--color-cream)" }}
+              onMouseEnter={e => (e.currentTarget.style.color = "var(--color-linen)")}
+              onMouseLeave={e => (e.currentTarget.style.color = "var(--color-cream)")}
               onClick={() => {
                 setOpen(false);
                 setSubmenuOpen(false);
@@ -121,9 +121,9 @@ export default function HeaderSoft() {
             aria-label="Abrir menú"
           >
             <div className="space-y-1.5">
-              <span className="block h-0.5 w-6 bg-[#FAF8F5]" />
-              <span className="block h-0.5 w-6 bg-[#FAF8F5]" />
-              <span className="block h-0.5 w-6 bg-[#FAF8F5]" />
+              <span className="block h-0.5 w-6 bg-(--color-cream)" />
+              <span className="block h-0.5 w-6 bg-(--color-cream)" />
+              <span className="block h-0.5 w-6 bg-(--color-cream)" />
             </div>
           </button>
         </div>
@@ -134,8 +134,8 @@ export default function HeaderSoft() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="md:hidden border-t" style={{ background: "#FFFFFF", borderColor: "#EDE9E3" }}>
-          <nav className="flex flex-col gap-4 px-6 py-6" style={{ color: "#A09587" }}>
+        <div className="md:hidden border-t" style={{ background: "var(--color-white)", borderColor: "var(--color-linen)" }}>
+          <nav className="flex flex-col gap-4 px-6 py-6" style={{ color: "var(--color-copy)" }}>
             {!isHome && (
               <Link
                 href="/copy-home"
@@ -158,7 +158,7 @@ export default function HeaderSoft() {
             </button>
 
             {submenuOpen && (
-              <div className="ml-4 flex flex-col gap-3 text-sm" style={{ color: "#C8C0B2" }}>
+              <div className="ml-4 flex flex-col gap-3 text-sm" style={{ color: "var(--color-copy)" }}>
                 <Link
                   href="/unidades-de-negocio/nrv-ingenieria"
                   onClick={() => { setOpen(false); setSubmenuOpen(!submenuOpen); }}

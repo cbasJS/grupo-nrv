@@ -13,7 +13,7 @@ export default function DivisionsSectionSoft() {
     useScrollReveal<HTMLDivElement>();
 
   return (
-    <section className="py-10 px-4 lg:px-12 xl:px-16 lg:py-16 bg-[#FAF8F5]">
+    <section className="py-10 px-4 lg:px-12 xl:px-16 lg:py-16 bg-(--color-cream)">
       {/* Header */}
       <div ref={headerRef} className="text-center mb-6 lg:mb-10">
         <p
@@ -23,7 +23,7 @@ export default function DivisionsSectionSoft() {
           style={{
             fontFamily: "var(--font-roboto-condensed)",
             fontWeight: 400,
-            color: "#C8C0B2",
+            color: "var(--color-sand)",
             fontSize: "clamp(13px, 2.5vw, 32px)",
             letterSpacing: "0.12em",
           }}
@@ -37,7 +37,7 @@ export default function DivisionsSectionSoft() {
           style={{
             fontFamily: "var(--font-syncopate)",
             fontWeight: 700,
-            color: "#B5AA96",
+            color: "var(--color-beige)",
             fontSize: "clamp(16px, 4vw, 40px)",
             animationDelay: headerVisible ? "120ms" : undefined,
             lineHeight: 1.15,
@@ -93,7 +93,7 @@ export default function DivisionsSectionSoft() {
                   style={{
                     fontFamily: "var(--font-roboto-sans)",
                     fontWeight: 700,
-                    color: "#B5AA96",
+                    color: "var(--color-beige)",
                     fontSize: "clamp(11px, 1.2vw, 14px)",
                     letterSpacing: "0.05em",
                   }}
@@ -104,7 +104,7 @@ export default function DivisionsSectionSoft() {
                   style={{
                     fontFamily: "var(--font-roboto-sans)",
                     fontWeight: 400,
-                    color: "#A09587",
+                    color: "var(--color-copy)",
                     fontSize: "clamp(12px, 1.1vw, 14px)",
                     lineHeight: 1.3,
                   }}
@@ -114,11 +114,11 @@ export default function DivisionsSectionSoft() {
                 {division.route ? (
                   <Link
                     href={division.route}
-                    className="inline-block mt-2 underline underline-offset-2 hover:text-[#B5AA96] transition-colors duration-300"
+                    className="inline-block mt-2 underline underline-offset-2 hover:text-(--color-beige) transition-colors duration-300"
                     style={{
                       fontFamily: "var(--font-roboto-sans)",
                       fontWeight: 400,
-                      color: "#C8C0B2",
+                      color: "var(--color-copy)",
                       fontSize: "clamp(11px, 1vw, 13px)",
                     }}
                   >
@@ -130,7 +130,7 @@ export default function DivisionsSectionSoft() {
                     style={{
                       fontFamily: "var(--font-roboto-sans)",
                       fontWeight: 400,
-                      color: "#C8C0B2",
+                      color: "var(--color-copy)",
                       fontSize: "clamp(11px, 1vw, 13px)",
                     }}
                   >

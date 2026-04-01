@@ -12,7 +12,7 @@ export default function AboutSectionSoft() {
   const { ref: cardsRef, visible: cardsVisible } = useScrollReveal<HTMLDivElement>();
 
   return (
-    <section className="py-10 px-4 lg:px-12 xl:px-16 lg:py-16 bg-[#FFFFFF]">
+    <section className="py-10 px-4 lg:px-12 xl:px-16 lg:py-16 bg-white">
       <div className="lg:flex lg:justify-between lg:items-center lg:gap-12">
         <div ref={textRef}>
           <p
@@ -22,7 +22,7 @@ export default function AboutSectionSoft() {
             style={{
               fontFamily: "var(--font-roboto-sans)",
               fontWeight: 400,
-              color: "#C8C0B2",
+              color: "var(--color-sand)",
               fontSize: "clamp(10px, 2vw, 24px)",
             }}
           >
@@ -36,7 +36,7 @@ export default function AboutSectionSoft() {
               animationDelay: textVisible ? "120ms" : undefined,
               fontFamily: "var(--font-roboto-sans)",
               fontWeight: 700,
-              color: "#B5AA96",
+              color: "var(--color-beige)",
               fontSize: "clamp(26px, 5vw, 64px)",
               lineHeight: 1.1,
             }}
@@ -52,7 +52,7 @@ export default function AboutSectionSoft() {
             style={{
               fontFamily: "var(--font-roboto-sans)",
               fontWeight: 400,
-              color: "#A09587",
+              color: "var(--color-copy)",
               fontSize: "clamp(14px, 2vw, 24px)",
               animationDelay: textVisible ? "240ms" : undefined,
             }}
@@ -67,7 +67,7 @@ export default function AboutSectionSoft() {
             style={{
               fontFamily: "var(--font-roboto-sans)",
               fontWeight: 400,
-              color: "#A09587",
+              color: "var(--color-copy)",
               fontSize: "clamp(14px, 2vw, 24px)",
               animationDelay: textVisible ? "340ms" : undefined,
             }}
@@ -81,17 +81,17 @@ export default function AboutSectionSoft() {
           {values.map((value, idx) => (
           <div
             key={value.id}
-            className={`bg-[#FAF8F5] rounded-lg flex items-center gap-6 lg:gap-8 shadow-sm group cursor-default px-4 py-3 lg:px-6 lg:py-4 lg:max-w-135 lg:min-w-135 border border-[#EDE9E3] ${
+            className={`bg-(--color-cream) rounded-lg flex items-center gap-6 lg:gap-8 shadow-sm group cursor-default px-4 py-3 lg:px-6 lg:py-4 lg:max-w-135 lg:min-w-135 border border-(--color-linen) ${
               cardsVisible ? "animate-nrv-slide-left" : "opacity-0"
             }`}
             style={{ animationDelay: cardsVisible ? `${idx * 150}ms` : undefined }}
           >
             {value.id === 1 ? (
-              <UnionIcon color="#B5AA96" width={32} height={40} className="shrink-0" />
+              <UnionIcon color="var(--color-beige)" width={32} height={40} className="shrink-0" />
             ) : value.id === 2 ? (
-              <TeamIcon color="#B5AA96" width={32} height={36} className="shrink-0" />
+              <TeamIcon color="var(--color-beige)" width={32} height={36} className="shrink-0" />
             ) : value.id === 3 ? (
-              <ExcelenciaIcon color="#B5AA96" width={32} height={32} className="shrink-0" />
+              <ExcelenciaIcon color="var(--color-beige)" width={32} height={32} className="shrink-0" />
             ) : (
               <Image
                 src={value.icon}
@@ -106,9 +106,9 @@ export default function AboutSectionSoft() {
                 style={{
                   fontFamily: "var(--font-roboto-sans)",
                   fontWeight: 700,
-                  color: "#A09587",
+                  color: "var(--color-copy)",
                 }}
-                className="text-[12px] lg:text-2xl group-hover:text-[#B5AA96] transition-colors duration-300"
+                className="text-[12px] lg:text-2xl group-hover:text-(--color-beige) transition-colors duration-300"
               >
                 {value.title}
               </p>
@@ -116,7 +116,7 @@ export default function AboutSectionSoft() {
                 style={{
                   fontFamily: "var(--font-roboto-sans)",
                   fontWeight: 400,
-                  color: "#C8C0B2",
+                  color: "var(--color-copy)",
                 }}
                 className="text-[10px] lg:text-base mt-0.5"
               >
