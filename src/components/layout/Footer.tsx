@@ -147,7 +147,7 @@ export default function Footer() {
 
         {/* Footer bottom */}
         <div className="mt-14 text-center text-sm text-gray-300 space-y-2">
-          <p>© 2025, Todos los derechos reservados</p>
+          <p>© 2026 Grupo NRV. Todos los derechos reservados.</p>
         </div>
       </div>
     </footer>
