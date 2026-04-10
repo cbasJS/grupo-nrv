@@ -14,7 +14,7 @@ export default function NewHomeFooter() {
             className="h-10 w-auto"
           />
           <p className="text-sm" style={{ color: "#FFF7EA" }}>
-            2026 Grupo NRV. Todos los derechos reservados.
+            © 2026 Grupo NRV. Todos los derechos reservados.
           </p>
         </div>
       </div>
@@ -29,7 +29,10 @@ export default function NewHomeFooter() {
           className="h-8 w-auto"
         />
         <div className="h-px w-16 bg-[#009951]" />
-        <div className="text-center text-xs space-y-1" style={{ color: "#FFF7EA" }}>
+        <div
+          className="text-center text-xs space-y-1"
+          style={{ color: "#FFF7EA" }}
+        >
           <p>2026 Grupo NRV.</p>
           <p>Todos los derechos reservados.</p>
         </div>

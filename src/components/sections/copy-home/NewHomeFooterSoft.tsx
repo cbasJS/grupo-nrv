@@ -29,8 +29,11 @@ export default function NewHomeFooterSoft() {
           className="h-8 w-auto"
         />
         <div className="h-px w-16 bg-[#EDE9E3]" />
-        <div className="text-center text-xs space-y-1" style={{ color: "#FAF8F5" }}>
-          <p>2026 Grupo NRV.</p>
+        <div
+          className="text-center text-xs space-y-1"
+          style={{ color: "#FAF8F5" }}
+        >
+          <p>© 2026 Grupo NRV.</p>
           <p>Todos los derechos reservados.</p>
         </div>
       </div>

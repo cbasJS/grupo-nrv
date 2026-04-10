@@ -48,7 +48,10 @@ export default function FooterSoft() {
   return (
     <footer
       className="px-6 py-10 md:px-24 lg:px-28 xl:px-56 backdrop-blur-md md:h-16.25 md:py-0 md:flex md:items-center md:overflow-hidden"
-      style={{ background: "rgba(181, 170, 150, 0.12)", color: "var(--color-cream)" }}
+      style={{
+        background: "rgba(181, 170, 150, 0.12)",
+        color: "var(--color-cream)",
+      }}
     >
       <div className="max-w-7xl mx-auto">
         {/* Contenido principal */}
@@ -170,7 +173,11 @@ export default function FooterSoft() {
               <button
                 type="submit"
                 className="px-8 py-2 rounded-lg text-sm cursor-pointer self-end flex disabled:opacity-50 disabled:cursor-not-allowed transition"
-                style={{ background: "rgba(255,255,255,0.2)", color: "var(--color-cream)", border: "1px solid rgba(255,255,255,0.35)" }}
+                style={{
+                  background: "rgba(255,255,255,0.2)",
+                  color: "var(--color-cream)",
+                  border: "1px solid rgba(255,255,255,0.35)",
+                }}
                 disabled={
                   isPending ||
                   !contactMessage.name ||
@@ -196,7 +203,7 @@ export default function FooterSoft() {
           className="mt-6 md:mt-3 text-center text-sm space-y-2"
           style={{ color: "var(--color-cream)" }}
         >
-          <p>© 2025, Todos los derechos reservados</p>
+          <p>© 2026 Grupo NRV. Todos los derechos reservados.</p>
         </div>
       </div>
     </footer>
